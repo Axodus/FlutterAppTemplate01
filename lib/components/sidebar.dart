@@ -1,4 +1,5 @@
 import 'package:FlutterAppTemplate01/components/colors.dart';
+import 'package:FlutterAppTemplate01/components/globalVars.dart';
 import 'package:flutter/material.dart';
 
 sidebar(context, function) {
@@ -30,9 +31,22 @@ sidebar(context, function) {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      CircleAvatar(
-                        backgroundColor: primary,
-                        radius: 40,
+                      Stack(
+                        children: [
+                          CircleAvatar(
+                            backgroundColor: primary,
+                            radius: 40,
+                          ),
+                          Positioned(
+                            bottom: 10.0,
+                            left: 30,
+                            child: Icon(
+                              Icons.edit,
+                              size: 20.0,
+                              color: secondary,
+                            ),
+                          ),
+                        ],
                       )
                     ],
                   ),
@@ -41,7 +55,7 @@ sidebar(context, function) {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "John Doe",
+                        fullName,
                         style: TextStyle(
                           fontSize: 20,
                           color: Colors.grey[600]
